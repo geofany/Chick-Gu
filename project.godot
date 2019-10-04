@@ -19,6 +19,10 @@ config/name="Chick-Go"
 run/main_scene="res://Level 1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalVar="*res://GlobalVar.gd"
+
 [display]
 
 window/size/width=1280
