@@ -4,14 +4,14 @@
 [ext_resource path="res://Assets/Background_vf.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Kayu AS.png" type="Texture" id=3]
 [ext_resource path="res://ayam1.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Ayam Senang Idle.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Ayam Senang Gerak.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Ayam Mati.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Ayam Senang Idle.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Ayam Senang Gerak.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Ayam Sakit.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Ayam Marah Idle.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Ayam Marah Gerak.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Ayam Sakit.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Ayam Mati.png" type="Texture" id=12]
 [ext_resource path="res://Assets/belakang.png" type="Texture" id=13]
 [ext_resource path="res://Assets/atas.png" type="Texture" id=14]
 [ext_resource path="res://Assets/tengah.png" type="Texture" id=15]
@@ -54,18 +54,18 @@ bg_color = Color( 0.6, 0.6, 0.6, 0 )
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
-"name": "Normal",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
 "name": "Senang",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "Mati",
+"name": "Sakit",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Normal",
+"speed": 3.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
@@ -74,7 +74,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "Sakit",
+"name": "Mati",
 "speed": 1.0
 } ]
 
@@ -137,6 +137,7 @@ scale = Vector2( 0.79989, 0.79989 )
 texture = ExtResource( 3 )
 
 [node name="Baris 1" type="Node2D" parent="ScrollContainer/VBoxContainer"]
+editor/display_folded = true
 position = Vector2( 15, 0 )
 __meta__ = {
 "_edit_group_": true
@@ -290,22 +291,22 @@ texture = ExtResource( 3 )
 [node name="Ayam 1" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 2"]
 position = Vector2( 235, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="Ayam 2" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 2"]
 position = Vector2( 485, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="Ayam 3" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 2"]
 position = Vector2( 735, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="Ayam 4" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 2"]
 position = Vector2( 985, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="Bk1" type="Button" parent="ScrollContainer/VBoxContainer/Baris 2"]
 margin_left = -10.0
@@ -377,22 +378,22 @@ texture = ExtResource( 3 )
 [node name="Ayam 1" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 3"]
 position = Vector2( 235, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="Ayam 2" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 3"]
 position = Vector2( 485, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="Ayam 3" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 3"]
 position = Vector2( 735, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="Ayam 4" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 3"]
 position = Vector2( 985, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="Bk1" type="Button" parent="ScrollContainer/VBoxContainer/Baris 3"]
 margin_left = -10.0
@@ -434,7 +435,6 @@ texture = ExtResource( 21 )
 hframes = 2
 
 [node name="Tools" type="Node2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 22 )
 
 [node name="makanan" type="Button" parent="Tools"]
@@ -510,6 +510,6 @@ autostart = true
 [connection signal="pressed" from="Tools/makanan" to="Tools" method="_on_makanan_pressed"]
 [connection signal="pressed" from="Tools/Air" to="Tools" method="_on_air_pressed"]
 [connection signal="pressed" from="Tools/vaksin" to="Tools" method="_on_vaksin_pressed"]
-[connection signal="timeout" from="HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_HPTimer_timeout"]
 [connection signal="timeout" from="HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_HPTimer_timeout"]
+[connection signal="timeout" from="HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_HPTimer_timeout"]
 [connection signal="timeout" from="SakitTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_SakitTimer_timeout"]
