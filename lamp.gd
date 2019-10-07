@@ -14,10 +14,3 @@ func _ready():
 
 
 
-func _on_BL1_toggled(button_pressed):
-	if button_pressed:
-		get_child(0).frame = 1
-	else:
-		get_child(0).frame = 0
-	pass # Replace with function body.
-

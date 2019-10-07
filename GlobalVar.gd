@@ -3,6 +3,7 @@ extends Node
 var makanan = false
 var minuman = false
 var vaksin = false
+var cuaca
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
