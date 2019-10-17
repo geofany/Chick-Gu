@@ -11,13 +11,26 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+	if GlobalVar.makan == 0:
+		if GlobalVar.makanan:
+			Input.set_custom_mouse_cursor(null)
+			GlobalVar.makanan = false
+	if GlobalVar.minum == 0:
+		if GlobalVar.minuman:
+			Input.set_custom_mouse_cursor(null)
+			GlobalVar.minuman = false
+	if GlobalVar.vaks == 0:
+		if GlobalVar.vaksin:
+			Input.set_custom_mouse_cursor(null)
+			GlobalVar.vaksin = false
 	pass
 
 
 func _on_makanan_pressed():
-	Input.set_custom_mouse_cursor(load('res://Assets/Makanan cursor.png'))
-	GlobalVar.makanan = true
+	if GlobalVar.makan > 0:
+		Input.set_custom_mouse_cursor(load('res://Assets/Makanan cursor.png'))
+		GlobalVar.makanan = true
+		
 	pass # Replace with function body.
 
 func _input(event):
@@ -29,12 +42,14 @@ func _input(event):
 			GlobalVar.vaksin = false
 
 func _on_air_pressed():
-	Input.set_custom_mouse_cursor(load('res://Assets/Water cursor.png'))
-	GlobalVar.minuman = true
+	if GlobalVar.minum > 0:
+		Input.set_custom_mouse_cursor(load('res://Assets/Water cursor.png'))
+		GlobalVar.minuman = true
 	pass # Replace with function body.
 
 
 func _on_vaksin_pressed():
-	Input.set_custom_mouse_cursor(load('res://Assets/Vaksin cursor.png'))
-	GlobalVar.vaksin = true
+	if GlobalVar.vaks > 0:
+		Input.set_custom_mouse_cursor(load('res://Assets/Vaksin cursor.png'))
+		GlobalVar.vaksin = true
 	pass # Replace with function body.

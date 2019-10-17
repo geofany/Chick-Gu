@@ -3,7 +3,6 @@ extends Button
 var animation_ayam
 var HP = 70.0
 var status = "Normal"
-var mati = 0
 var kipas
 var lampu
 var mood
@@ -50,6 +49,12 @@ func _process(delta):
 		else:
 			status = "Mati"
 			change_status(status)
+	if status == "Mati":
+		GlobalVar.mati += 1
+		if GlobalVar.mati == 2:
+			lampu("Off")
+			kipas("Off")
+		queue_free()
 	pass
 	
 func change_status(status):
@@ -59,10 +64,22 @@ func change_status(status):
 func _on_ayam1_pressed():
 	if status != "Mati":
 		if GlobalVar.makanan == true && status != "Sakit":
+			GlobalVar.makan -= 1
+			if GlobalVar.makan == 0:
+				get_node("/root/Level 1/MakananTimer").start(5)
+				get_node("/root/Level 1/Tools/makanan/makan").play("cooldown")
 			HP += 20
 		if GlobalVar.minuman == true && status != "Sakit":
+			GlobalVar.minum -= 1
+			if GlobalVar.minum == 0:
+				get_node("/root/Level 1/MinumanTimer").start(5)
+				get_node("/root/Level 1/Tools/Air/air").play("cooldown")
 			HP += 10
 		if GlobalVar.vaksin == true && status == "Sakit":
+			GlobalVar.vaks -= 1
+			if GlobalVar.vaks == 0:
+				get_node("/root/Level 1/VaksinTimer").start(5)
+				get_node("/root/Level 1/Tools/vaksin/Vaksin").play("cooldown")
 			status = "Normal"
 			if HP > 50:
 				HP = 50
@@ -86,7 +103,7 @@ func _on_HPTimer_timeout():
 func _on_SakitTimer_timeout():
 	randomize()
 	var t = rand_range(0,100)
-	get_node("/root/Level 1/SakitTimer").start(t)
+	get_node("SakitTimer").start(t)
 	if status != "Mati":
 		status = "Sakit"
 	pass # Replace with function body.
