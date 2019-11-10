@@ -1,17 +1,17 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Level 1.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Background_vf.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Kayu AS.png" type="Texture" id=3]
 [ext_resource path="res://ayam1.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Ayam Senang Idle.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Ayam Senang Gerak.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Ayam Sakit.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Ayam Marah Idle.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Ayam Marah Gerak.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Ayam Mati.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Ayam Sakit.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Ayam Mati.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Ayam Senang Idle.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Ayam Senang Gerak.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Ayam Marah Idle.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Ayam Marah Gerak.png" type="Texture" id=12]
 [ext_resource path="res://Assets/belakang.png" type="Texture" id=13]
 [ext_resource path="res://Assets/atas.png" type="Texture" id=14]
 [ext_resource path="res://Assets/tengah.png" type="Texture" id=15]
@@ -25,66 +25,174 @@
 [ext_resource path="res://Assets/Makanan.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Water.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Vaksin.png" type="Texture" id=25]
-
-[sub_resource type="StyleBoxEmpty" id=1]
-
-[sub_resource type="StyleBoxEmpty" id=2]
-
-[sub_resource type="StyleBoxEmpty" id=3]
+[ext_resource path="res://Assets/wood_texture_4.jpg" type="Texture" id=26]
+[ext_resource path="res://Assets/fonts/MariaElisasHand.ttf" type="DynamicFontData" id=27]
+[ext_resource path="res://Assets/button_o.png" type="Texture" id=28]
+[ext_resource path="res://Assets/button_2.png" type="Texture" id=29]
+[ext_resource path="res://Assets/fonts/bahnschrift.ttf" type="DynamicFontData" id=30]
+[ext_resource path="res://Assets/gameover.png" type="Texture" id=31]
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=5]
 
-[sub_resource type="Theme" id=6]
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="Theme" id=9]
 VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null
 VScrollBar/icons/increment_highlight = null
-VScrollBar/styles/grabber = SubResource( 1 )
-VScrollBar/styles/grabber_highlight = SubResource( 2 )
-VScrollBar/styles/grabber_pressed = SubResource( 3 )
-VScrollBar/styles/scroll = SubResource( 4 )
-VScrollBar/styles/scroll_focus = SubResource( 5 )
+VScrollBar/styles/grabber = SubResource( 4 )
+VScrollBar/styles/grabber_highlight = SubResource( 5 )
+VScrollBar/styles/grabber_pressed = SubResource( 6 )
+VScrollBar/styles/scroll = SubResource( 7 )
+VScrollBar/styles/scroll_focus = SubResource( 8 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "Senang",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "Sakit",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Normal",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "Marah",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "Mati",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Senang",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Marah",
+"speed": 3.0
 } ]
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "default",
 "speed": 40.0
 } ]
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 26 )
+region_rect = Rect2( 0, 0, 6000, 4000 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 24
+font_data = ExtResource( 27 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 28 )
+region_rect = Rect2( 0, 0, 250, 58 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 29 )
+region_rect = Rect2( 0, 0, 250, 58 )
+
+[sub_resource type="DynamicFont" id=25]
+font_data = ExtResource( 30 )
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 31 )
+region_rect = Rect2( 0, 0, 193, 46 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 48
+font_data = ExtResource( 27 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 24
+font_data = ExtResource( 27 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.854902, 0.101961, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.871582, 0.262874, 0.180445, 1 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 26
+font_data = ExtResource( 30 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0, 0.360784, 0.172549, 1 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.0344543, 0.55127, 0.281627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0.376471, 0.313726, 0.156863, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 0.47451, 0, 1 )
+
+[sub_resource type="DynamicFont" id=27]
+size = 48
+font_data = ExtResource( 27 )
+
+[sub_resource type="StyleBoxFlat" id=30]
+bg_color = Color( 0.152941, 0.815686, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=31]
+bg_color = Color( 0.411556, 0.887695, 0.301678, 1 )
+
+[sub_resource type="DynamicFont" id=28]
+size = 28
+font_data = ExtResource( 30 )
+
+[sub_resource type="StyleBoxFlat" id=32]
+bg_color = Color( 0.686275, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=33]
+bg_color = Color( 0.765625, 0.227295, 0.227295, 1 )
+
+[sub_resource type="Animation" id=26]
+resource_name = "GameOver"
+tracks/0/type = "value"
+tracks/0/path = NodePath("GameOver:margin_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -500.0, 200.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GameOver:margin_bottom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -180.0, 520.0 ]
+}
 
 [node name="Level 1" type="Control"]
 script = ExtResource( 1 )
@@ -100,14 +208,15 @@ anchor_bottom = 1.0
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_clip_content = false
-theme = SubResource( 6 )
+theme = SubResource( 9 )
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="PanelContainer" parent="ScrollContainer"]
+editor/display_folded = true
 margin_right = 1280.0
 margin_bottom = 2100.0
 rect_min_size = Vector2( 1280, 2100 )
-custom_styles/panel = SubResource( 7 )
+custom_styles/panel = SubResource( 10 )
 
 [node name="Kayu 1" type="Node2D" parent="ScrollContainer/VBoxContainer"]
 editor/display_folded = true
@@ -176,7 +285,7 @@ script = ExtResource( 4 )
 [node name="Ayam1" type="AnimatedSprite" parent="ScrollContainer/VBoxContainer/Baris 1/ayam1"]
 position = Vector2( 50, 80 )
 scale = Vector2( 0.200786, 0.200786 )
-frames = SubResource( 8 )
+frames = SubResource( 11 )
 animation = "Normal"
 
 [node name="HPBar" type="TextureProgress" parent="ScrollContainer/VBoxContainer/Baris 1/ayam1"]
@@ -204,7 +313,7 @@ script = ExtResource( 4 )
 [node name="Ayam1" type="AnimatedSprite" parent="ScrollContainer/VBoxContainer/Baris 1/ayam2"]
 position = Vector2( 50, 80 )
 scale = Vector2( 0.200786, 0.200786 )
-frames = SubResource( 8 )
+frames = SubResource( 11 )
 animation = "Normal"
 
 [node name="HPBar" type="TextureProgress" parent="ScrollContainer/VBoxContainer/Baris 1/ayam2"]
@@ -237,7 +346,7 @@ __meta__ = {
 [node name="k1" type="AnimatedSprite" parent="ScrollContainer/VBoxContainer/Baris 1/Bk1"]
 position = Vector2( 50, 80 )
 scale = Vector2( 0.138432, 0.138432 )
-frames = SubResource( 9 )
+frames = SubResource( 12 )
 
 [node name="BL1" type="Button" parent="ScrollContainer/VBoxContainer/Baris 1"]
 editor/display_folded = true
@@ -291,22 +400,22 @@ texture = ExtResource( 3 )
 [node name="Ayam 1" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 2"]
 position = Vector2( 235, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 8 )
+texture = ExtResource( 6 )
 
 [node name="Ayam 2" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 2"]
 position = Vector2( 485, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 8 )
+texture = ExtResource( 6 )
 
 [node name="Ayam 3" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 2"]
 position = Vector2( 735, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 8 )
+texture = ExtResource( 6 )
 
 [node name="Ayam 4" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 2"]
 position = Vector2( 985, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 8 )
+texture = ExtResource( 6 )
 
 [node name="Bk1" type="Button" parent="ScrollContainer/VBoxContainer/Baris 2"]
 margin_left = -10.0
@@ -325,7 +434,7 @@ __meta__ = {
 [node name="k1" type="AnimatedSprite" parent="ScrollContainer/VBoxContainer/Baris 2/Bk1"]
 position = Vector2( 50, 80 )
 scale = Vector2( 0.138432, 0.138432 )
-frames = SubResource( 9 )
+frames = SubResource( 12 )
 
 [node name="BL1" type="Button" parent="ScrollContainer/VBoxContainer/Baris 2"]
 margin_left = 585.0
@@ -378,22 +487,22 @@ texture = ExtResource( 3 )
 [node name="Ayam 1" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 3"]
 position = Vector2( 235, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 8 )
+texture = ExtResource( 6 )
 
 [node name="Ayam 2" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 3"]
 position = Vector2( 485, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 8 )
+texture = ExtResource( 6 )
 
 [node name="Ayam 3" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 3"]
 position = Vector2( 735, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 8 )
+texture = ExtResource( 6 )
 
 [node name="Ayam 4" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 3"]
 position = Vector2( 985, 160 )
 scale = Vector2( 0.199558, 0.199558 )
-texture = ExtResource( 8 )
+texture = ExtResource( 6 )
 
 [node name="Bk1" type="Button" parent="ScrollContainer/VBoxContainer/Baris 3"]
 margin_left = -10.0
@@ -412,7 +521,7 @@ __meta__ = {
 [node name="k1" type="AnimatedSprite" parent="ScrollContainer/VBoxContainer/Baris 3/Bk1"]
 position = Vector2( 50, 80 )
 scale = Vector2( 0.138432, 0.138432 )
-frames = SubResource( 9 )
+frames = SubResource( 12 )
 
 [node name="BL1" type="Button" parent="ScrollContainer/VBoxContainer/Baris 3"]
 margin_left = 585.0
@@ -435,6 +544,7 @@ texture = ExtResource( 21 )
 hframes = 2
 
 [node name="Tools" type="Node2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 22 )
 
 [node name="makanan" type="Button" parent="Tools"]
@@ -499,6 +609,188 @@ autostart = true
 
 [node name="SakitTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="HUDPanel" type="Panel" parent="."]
+editor/display_folded = true
+margin_left = 200.95
+margin_right = 1080.95
+margin_bottom = 48.2419
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUDPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="Timer" type="Label" parent="HUDPanel/HBoxContainer"]
+margin_right = 211.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 21 )
+text = "Waktu : "
+valign = 1
+
+[node name="Hidup" type="Label" parent="HUDPanel/HBoxContainer"]
+margin_left = 215.0
+margin_right = 426.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 21 )
+text = "Hidup : "
+valign = 1
+
+[node name="Mati" type="Label" parent="HUDPanel/HBoxContainer"]
+margin_left = 430.0
+margin_right = 641.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 21 )
+text = "Mati : "
+valign = 1
+
+[node name="MenuPause" type="Button" parent="HUDPanel/HBoxContainer"]
+margin_left = 645.0
+margin_right = 859.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/normal = SubResource( 14 )
+custom_fonts/font = SubResource( 25 )
+custom_colors/font_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+text = "Menu"
+
+[node name="GameOver" type="Panel" parent="."]
+editor/display_folded = true
+margin_left = 250.0
+margin_top = -500.0
+margin_right = 1030.0
+margin_bottom = -180.0
+custom_styles/panel = SubResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="GameOver"]
+position = Vector2( 0, 250 )
+scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 8 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 75.0
+margin_right = -100.0
+margin_bottom = -75.0
+
+[node name="GameOverTitle" type="Label" parent="GameOver/VBoxContainer"]
+margin_right = 580.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 22 )
+text = "Game Over"
+align = 1
+valign = 1
+
+[node name="GameOverMessage" type="Label" parent="GameOver/VBoxContainer"]
+margin_top = 58.0
+margin_right = 580.0
+margin_bottom = 112.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 23 )
+text = "Apakah mau mencoba lagi?"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameOver/VBoxContainer"]
+margin_top = 116.0
+margin_right = 580.0
+margin_bottom = 170.0
+size_flags_vertical = 3
+
+[node name="Tidak" type="Button" parent="GameOver/VBoxContainer/HBoxContainer"]
+margin_right = 288.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/normal = SubResource( 17 )
+custom_fonts/font = SubResource( 24 )
+text = "TIdak"
+
+[node name="Ya" type="Button" parent="GameOver/VBoxContainer/HBoxContainer"]
+margin_left = 292.0
+margin_right = 580.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/normal = SubResource( 19 )
+custom_fonts/font = SubResource( 24 )
+text = "Ya"
+
+[node name="Pause" type="Panel" parent="."]
+editor/display_folded = true
+margin_left = 300.0
+margin_top = 200.0
+margin_right = 980.0
+margin_bottom = 520.0
+custom_styles/panel = SubResource( 29 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+
+[node name="PauseTitle" type="Label" parent="Pause/VBoxContainer"]
+margin_right = 640.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 27 )
+text = "Pause"
+align = 1
+valign = 1
+
+[node name="Continue" type="Button" parent="Pause/VBoxContainer"]
+margin_top = 94.0
+margin_right = 640.0
+margin_bottom = 184.0
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 30 )
+custom_styles/pressed = SubResource( 31 )
+custom_styles/normal = SubResource( 30 )
+custom_fonts/font = SubResource( 28 )
+text = "Lanjut"
+
+[node name="ExitGame" type="Button" parent="Pause/VBoxContainer"]
+margin_top = 188.0
+margin_right = 640.0
+margin_bottom = 280.0
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 32 )
+custom_styles/pressed = SubResource( 33 )
+custom_styles/normal = SubResource( 32 )
+custom_fonts/font = SubResource( 28 )
+text = "Keluar"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/GameOver = SubResource( 26 )
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Baris 1/ayam1" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_ayam1_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Baris 1/ayam2" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_ayam1_pressed"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/Bk1" to="ScrollContainer/VBoxContainer/Baris 1/Bk1" method="_on_Bk1_toggled"]
@@ -510,6 +802,11 @@ autostart = true
 [connection signal="pressed" from="Tools/makanan" to="Tools" method="_on_makanan_pressed"]
 [connection signal="pressed" from="Tools/Air" to="Tools" method="_on_air_pressed"]
 [connection signal="pressed" from="Tools/vaksin" to="Tools" method="_on_vaksin_pressed"]
-[connection signal="timeout" from="HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_HPTimer_timeout"]
 [connection signal="timeout" from="HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_HPTimer_timeout"]
+[connection signal="timeout" from="HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_HPTimer_timeout"]
 [connection signal="timeout" from="SakitTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_SakitTimer_timeout"]
+[connection signal="pressed" from="HUDPanel/HBoxContainer/MenuPause" to="." method="_on_MenuPause_pressed"]
+[connection signal="pressed" from="GameOver/VBoxContainer/HBoxContainer/Tidak" to="." method="_on_Tidak_pressed"]
+[connection signal="pressed" from="GameOver/VBoxContainer/HBoxContainer/Ya" to="." method="_on_Ya_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/ExitGame" to="." method="_on_ExitGame_pressed"]

@@ -1,12 +1,14 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/wood_texture_2.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/fonts/MariaElisasHand.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Assets/Background_vf.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Kayu AS.png" type="Texture" id=7]
+[ext_resource path="res://Assets/button_o.png" type="Texture" id=4]
+[ext_resource path="res://Assets/button_2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Background_vf.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Kayu AS.png" type="Texture" id=9]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
@@ -16,33 +18,69 @@ region_rect = Rect2( 0, 0, 1600, 1257 )
 size = 56
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
-size = 36
-font_data = ExtResource( 3 )
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 250, 58 )
 
-[sub_resource type="SpriteFrames" id=10]
-animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-} ]
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 250, 58 )
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.27451, 0.262745, 0, 1 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 42
-font_data = ExtResource( 3 )
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 250, 58 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 36
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 250, 58 )
+
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 250, 58 )
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 250, 58 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.27451, 0.262745, 0, 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 42
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 36
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.690196, 0, 0, 1 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="DynamicFont" id=12]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 24
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=15]
 tracks/0/type = "value"
 tracks/0/path = NodePath("LevelPanel:margin_left")
 tracks/0/interp = 1
@@ -68,7 +106,7 @@ tracks/1/keys = {
 "values": [ 0.0, 300.0 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=16]
 tracks/0/type = "value"
 tracks/0/path = NodePath("LevelPanel:margin_left")
 tracks/0/interp = 1
@@ -94,8 +132,7 @@ tracks/1/keys = {
 "values": [ 300.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=11]
-resource_name = "AyamGakJelas"
+[sub_resource type="Animation" id=17]
 length = 10.0
 loop = true
 tracks/0/type = "value"
@@ -123,23 +160,10 @@ tracks/1/keys = {
 "values": [ Vector2( 700, 800 ), Vector2( 700, 650 ), Vector2( 700, 650 ), Vector2( 700, 800 ) ]
 }
 
-[sub_resource type="DynamicFont" id=12]
-size = 30
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=13]
-size = 30
-font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=14]
-size = 24
-font_data = ExtResource( 3 )
-
 [node name="MainMenu" type="Node"]
 script = ExtResource( 1 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -174,7 +198,10 @@ margin_top = 225.0
 margin_right = 342.0
 margin_bottom = 335.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "New Game"
 
 [node name="LoadGame" type="Button" parent="HBoxContainer/OptionPanel/VBoxContainer"]
@@ -182,7 +209,10 @@ margin_top = 339.0
 margin_right = 342.0
 margin_bottom = 449.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 6 )
 text = "Load Game"
 
 [node name="Credits" type="Button" parent="HBoxContainer/OptionPanel/VBoxContainer"]
@@ -190,7 +220,10 @@ margin_top = 453.0
 margin_right = 342.0
 margin_bottom = 563.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 6 )
 text = "Credits"
 
 [node name="Quit" type="Button" parent="HBoxContainer/OptionPanel/VBoxContainer"]
@@ -198,7 +231,10 @@ margin_top = 567.0
 margin_right = 342.0
 margin_bottom = 680.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 6 )
 text = "Quit"
 
 [node name="Background" type="TextureRect" parent="HBoxContainer"]
@@ -208,41 +244,41 @@ margin_right = 1280.0
 margin_bottom = 720.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 7.0
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 expand = true
 stretch_mode = 1
 
 [node name="Ayam01" type="AnimatedSprite" parent="HBoxContainer/Background"]
 position = Vector2( 714.376, 83.8181 )
 scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 10 )
+frames = SubResource( 7 )
 animation = "idle"
 
 [node name="Ayam02" type="AnimatedSprite" parent="HBoxContainer/Background"]
 position = Vector2( 176.825, 592.764 )
 scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 10 )
+frames = SubResource( 7 )
 animation = "idle"
 
 [node name="Ayam03" type="AnimatedSprite" parent="HBoxContainer/Background"]
 position = Vector2( 347.123, 594.096 )
 scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 10 )
+frames = SubResource( 7 )
 animation = "idle"
 
 [node name="AyamGkJelas" type="AnimatedSprite" parent="HBoxContainer/Background"]
 position = Vector2( 700, 740 )
 scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 10 )
+frames = SubResource( 7 )
 animation = "idle"
 
 [node name="Kayu01" type="Sprite" parent="HBoxContainer/Background"]
 position = Vector2( 673.625, 257.236 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="Kayu02" type="Sprite" parent="HBoxContainer/Background"]
 position = Vector2( 318.88, 761.67 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="LevelPanel" type="Panel" parent="."]
 editor/display_folded = true
@@ -250,13 +286,13 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 300.0
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 8 )
 
 [node name="LevelTitle" type="Label" parent="LevelPanel"]
 anchor_right = 1.0
 margin_top = 50.0
 margin_bottom = 200.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 9 )
 text = "Pilih level:"
 align = 1
 valign = 1
@@ -269,204 +305,80 @@ margin_top = 200.0
 margin_right = -10.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LevelPanel/ScrollContainer"]
-editor/display_folded = true
-margin_right = 268.0
-margin_bottom = 956.0
+margin_right = 280.0
+margin_bottom = 520.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Level_01" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
-margin_right = 268.0
+margin_right = 280.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 10 )
 text = "LEVEL 1"
 
 [node name="Level_02" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
 margin_top = 48.0
-margin_right = 268.0
+margin_right = 280.0
 margin_bottom = 92.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 10 )
 disabled = true
 text = "LEVEL 2"
 
 [node name="Level_03" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
 margin_top = 96.0
-margin_right = 268.0
+margin_right = 280.0
 margin_bottom = 140.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 10 )
 disabled = true
 text = "LEVEL 3"
 
 [node name="Level_04" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
 margin_top = 144.0
-margin_right = 268.0
+margin_right = 280.0
 margin_bottom = 188.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 10 )
 disabled = true
 text = "LEVEL 4"
 
 [node name="Level_05" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
 margin_top = 192.0
-margin_right = 268.0
+margin_right = 280.0
 margin_bottom = 236.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 10 )
 disabled = true
 text = "LEVEL 5"
 
 [node name="Level_06" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
 margin_top = 240.0
-margin_right = 268.0
+margin_right = 280.0
 margin_bottom = 284.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 10 )
 disabled = true
 text = "LEVEL 6"
 
 [node name="Level_07" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
 margin_top = 288.0
-margin_right = 268.0
+margin_right = 280.0
 margin_bottom = 332.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 10 )
 disabled = true
 text = "LEVEL 7"
-
-[node name="Level_08" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
-margin_top = 336.0
-margin_right = 268.0
-margin_bottom = 380.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
-disabled = true
-text = "LEVEL 8"
-
-[node name="Level_09" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
-margin_top = 384.0
-margin_right = 268.0
-margin_bottom = 428.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
-disabled = true
-text = "LEVEL 9"
-
-[node name="Level_10" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
-margin_top = 432.0
-margin_right = 268.0
-margin_bottom = 476.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
-disabled = true
-text = "LEVEL 10"
-
-[node name="Level_11" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
-margin_top = 480.0
-margin_right = 268.0
-margin_bottom = 524.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
-disabled = true
-text = "LEVEL 11"
-
-[node name="Level_12" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
-margin_top = 528.0
-margin_right = 268.0
-margin_bottom = 572.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
-disabled = true
-text = "LEVEL 12"
-
-[node name="Level_13" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
-margin_top = 576.0
-margin_right = 268.0
-margin_bottom = 620.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
-disabled = true
-text = "LEVEL 13"
-
-[node name="Level_14" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
-margin_top = 624.0
-margin_right = 268.0
-margin_bottom = 668.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
-disabled = true
-text = "LEVEL 14"
-
-[node name="Level_15" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
-margin_top = 672.0
-margin_right = 268.0
-margin_bottom = 716.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
-disabled = true
-text = "LEVEL 15"
-
-[node name="Level_16" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
-margin_top = 720.0
-margin_right = 268.0
-margin_bottom = 764.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
-disabled = true
-text = "LEVEL 16"
-
-[node name="Level_17" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
-margin_top = 768.0
-margin_right = 268.0
-margin_bottom = 812.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
-disabled = true
-text = "LEVEL 17"
-
-[node name="Level_18" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
-margin_top = 816.0
-margin_right = 268.0
-margin_bottom = 860.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
-disabled = true
-text = "LEVEL 18"
-
-[node name="Level_19" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
-margin_top = 864.0
-margin_right = 268.0
-margin_bottom = 908.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
-disabled = true
-text = "LEVEL 19"
-
-[node name="Level_20" type="Button" parent="LevelPanel/ScrollContainer/VBoxContainer"]
-margin_top = 912.0
-margin_right = 268.0
-margin_bottom = 956.0
-size_flags_horizontal = 3
-custom_fonts/font = SubResource( 6 )
-disabled = true
-text = "LEVEL 20"
 
 [node name="LevelClose" type="Button" parent="LevelPanel"]
 margin_right = 50.0
 margin_bottom = 35.0
-custom_styles/normal = SubResource( 7 )
+custom_styles/normal = SubResource( 11 )
 text = "Tutup"
 
-[node name="AnimationPanel" type="AnimationPlayer" parent="."]
-anims/LevelMenuHide = SubResource( 8 )
-anims/LevelMenuShow = SubResource( 9 )
-
-[node name="AnimationChicken" type="AnimationPlayer" parent="."]
-anims/AyamGakJelas = SubResource( 11 )
-
 [node name="PlayerPanel" type="Panel" parent="."]
+editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -523,6 +435,62 @@ size_flags_horizontal = 3
 custom_fonts/font = SubResource( 14 )
 text = "OK"
 
+[node name="WarningPanel" type="Panel" parent="."]
+editor/display_folded = true
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -80.0
+margin_right = 200.0
+margin_bottom = 80.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WarningPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+
+[node name="WarningMessage1" type="Label" parent="WarningPanel/VBoxContainer"]
+margin_right = 360.0
+margin_bottom = 37.0
+size_flags_vertical = 7
+text = "Apakah Anda yakin melanjutkan?"
+align = 1
+valign = 1
+
+[node name="WarningMessage2" type="Label" parent="WarningPanel/VBoxContainer"]
+margin_top = 41.0
+margin_right = 360.0
+margin_bottom = 78.0
+size_flags_vertical = 7
+text = "Jika iya, data permainan sebelumnya akan dihapus."
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WarningPanel/VBoxContainer"]
+margin_top = 82.0
+margin_right = 360.0
+margin_bottom = 120.0
+size_flags_vertical = 3
+
+[node name="Cancel" type="Button" parent="WarningPanel/VBoxContainer/HBoxContainer"]
+margin_right = 178.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+text = "Batal"
+
+[node name="OK" type="Button" parent="WarningPanel/VBoxContainer/HBoxContainer"]
+margin_left = 182.0
+margin_right = 360.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+text = "OK"
+
 [node name="CreditsPanel" type="PopupPanel" parent="."]
 editor/display_folded = true
 anchor_left = 0.5
@@ -537,6 +505,10 @@ margin_bottom = 100.0
 [node name="Who" type="Label" parent="CreditsPanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
 text = "Dibuat oleh:
 Tim PPL Agro H
 
@@ -547,6 +519,13 @@ Geovani
 Andry"
 align = 1
 valign = 1
+
+[node name="AnimationPanel" type="AnimationPlayer" parent="."]
+anims/LevelMenuHide = SubResource( 15 )
+anims/LevelMenuShow = SubResource( 16 )
+
+[node name="AnimationChicken" type="AnimationPlayer" parent="."]
+anims/AyamGakJelas = SubResource( 17 )
 [connection signal="pressed" from="HBoxContainer/OptionPanel/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="HBoxContainer/OptionPanel/VBoxContainer/LoadGame" to="." method="_on_LoadGame_pressed"]
 [connection signal="pressed" from="HBoxContainer/OptionPanel/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
@@ -558,19 +537,6 @@ valign = 1
 [connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_05" to="." method="_on_Level_pressed"]
 [connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_06" to="." method="_on_Level_pressed"]
 [connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_07" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_08" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_09" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_10" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_11" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_12" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_13" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_14" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_15" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_16" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_17" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_18" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_19" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_20" to="." method="_on_Level_pressed"]
 [connection signal="pressed" from="LevelPanel/LevelClose" to="." method="_on_LevelClose_pressed"]
 [connection signal="pressed" from="PlayerPanel/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_Cancel_pressed"]
 [connection signal="pressed" from="PlayerPanel/VBoxContainer/HBoxContainer/OK" to="." method="_on_OK_pressed"]

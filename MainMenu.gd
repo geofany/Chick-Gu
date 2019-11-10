@@ -4,6 +4,7 @@ var isLevelPanelHidden = true
 
 func _ready():
 	$PlayerPanel.hide()
+	$WarningPanel.hide()
 	$AnimationChicken.play("AyamGakJelas")
 	$HBoxContainer/Background/Ayam01.play("idle")
 	$HBoxContainer/Background/Ayam02.play("idle")
@@ -25,7 +26,9 @@ func _on_Exit_pressed():
 
 # PlayerForm
 func _on_OK_pressed():
-	if isLevelPanelHidden:
+	if not GlobalData.save_file_exists():
+		GlobalData.player_name = $PlayerPanel/VBoxContainer/PlayerInput.text
+		GlobalData.current_level = 1
 		$PlayerPanel.hide()
 		$AnimationPanel.play("LevelMenuShow")
 		$HBoxContainer/OptionPanel/VBoxContainer/NewGame.set_disabled(true)
@@ -33,6 +36,9 @@ func _on_OK_pressed():
 		$HBoxContainer/OptionPanel/VBoxContainer/Credits.set_disabled(true)
 		$HBoxContainer/OptionPanel/VBoxContainer/Quit.set_disabled(true)
 		isLevelPanelHidden = false
+	else:
+		$PlayerPanel.hide()
+		$WarningPanel.show()
 
 func _on_Cancel_pressed():
 	$PlayerPanel.hide()
@@ -50,4 +56,3 @@ func _on_LevelClose_pressed():
 
 func _on_Level_pressed():
 	get_tree().change_scene("Level 1.tscn")
-

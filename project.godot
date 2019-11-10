@@ -17,11 +17,12 @@ _global_script_class_icons={
 
 config/name="Chick-Go"
 run/main_scene="res://MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://Assets/Ayam Normal Idle.png"
 
 [autoload]
 
 GlobalVar="*res://GlobalVar.gd"
+GlobalData="*res://GlobalData.gd"
 
 [display]
 
