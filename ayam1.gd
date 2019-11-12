@@ -6,6 +6,7 @@ var status = "Normal"
 var kipas
 var lampu
 var mood
+var sudahMati = false
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -49,12 +50,13 @@ func _process(delta):
 		else:
 			status = "Mati"
 			change_status(status)
-	if status == "Mati":
+	if status == "Mati" and not sudahMati:
 		GlobalVar.mati += 1
 		if GlobalVar.mati == 2:
 			lampu("Off")
 			kipas("Off")
-		queue_free()
+		#queue_free()
+		sudahMati = true
 	pass
 	
 func change_status(status):

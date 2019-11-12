@@ -24,7 +24,7 @@ func _process(delta):
 	if timer <= 1:
 		get_tree().change_scene("MainMenu.tscn")
 	
-	if GlobalVar.mati == 1:
+	if GlobalVar.mati == 2:
 		isPlay = false
 		print("Game Over")
 		$GameOver.show()

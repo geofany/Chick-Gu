@@ -692,6 +692,7 @@ align = 1
 valign = 1
 
 [node name="PauseMenu" type="Panel" parent="."]
+visible = false
 margin_left = 200.0
 margin_top = 200.0
 margin_right = 1080.0
