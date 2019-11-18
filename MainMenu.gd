@@ -49,5 +49,6 @@ func _on_LevelClose_pressed():
 		isLevelPanelHidden = true
 
 func _on_Level_pressed():
+	GlobalVar.targetLevel = 1
 	get_tree().change_scene("Level 1.tscn")
 

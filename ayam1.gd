@@ -7,11 +7,7 @@ var kipas
 var lampu
 var mood
 var sudahMati = false
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	HP = 70.0
 	animation_ayam = get_child(0)
