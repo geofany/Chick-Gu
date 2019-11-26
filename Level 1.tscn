@@ -7,9 +7,9 @@
 [ext_resource path="res://ayam1.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Ayam Senang Idle.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Ayam Senang Gerak.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Ayam Mati.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Ayam Mati.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Ayam Marah Idle.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Ayam Marah Gerak.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Ayam Sakit.png" type="Texture" id=13]
@@ -280,15 +280,15 @@ animations = [ {
 "name": "Senang",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Normal",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "Mati",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Normal",
+"speed": 3.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,

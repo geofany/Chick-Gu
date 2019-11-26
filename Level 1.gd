@@ -14,7 +14,7 @@ func _ready():
 	GlobalVar.mati = 0
 	if GlobalVar.targetLevel != 1:
 		get_tree().paused = false
-	GlobalVar.time = 3.0
+	GlobalVar.time = 151.0
 	cuaca = "panas"
 
 func _process(delta):
