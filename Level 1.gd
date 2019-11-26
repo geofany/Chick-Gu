@@ -3,30 +3,37 @@ extends Control
 var cuaca
 
 func _ready():
-	if GlobalVar.targetLevel != 1:
-		get_tree().paused = false
-	$ScrollContainer.get_h_scrollbar().hide()
+	
+	$Win.hide()
+	$Tutorial.show()
 	$GameOver.hide()
 	$PauseMenu.hide()
-	GlobalVar.time = 151.0
+	$ScrollContainer.get_h_scrollbar().hide()
+	
+	GlobalVar.hidup = 0
+	GlobalVar.mati = 0
+	if GlobalVar.targetLevel != 1:
+		get_tree().paused = false
+	GlobalVar.time = 3.0
 	cuaca = "panas"
 
 func _process(delta):
+	GlobalVar.time -= delta
+	if GlobalVar.time <= 1:
+		get_tree().paused = true
+		$Win.show()
+	
+	GlobalVar.hidup = get_tree().get_nodes_in_group("chickens").size() - GlobalVar.mati
+	if GlobalVar.hidup  <= get_tree().get_nodes_in_group("chickens").size()/2:
+		get_tree().paused = true
+		print("Game Over")
+		$GameOver.show()
+	
 	if get_tree().paused:
 		$HUD.hide()
 	else:
 		$HUD.show()
 	
-	GlobalVar.time -= delta
-	GlobalVar.hidup = get_tree().get_nodes_in_group("chickens").size() - GlobalVar.mati
-	
-	if GlobalVar.time <= 1:
-		get_tree().change_scene("MainMenu.tscn")
-	
-	if GlobalVar.hidup  == 0:
-		get_tree().paused = true
-		print("Game Over")
-		$GameOver.show()
 
 func randomly(inputan):
 	return inputan[randi() % inputan.size()]

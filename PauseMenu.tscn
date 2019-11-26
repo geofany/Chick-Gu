@@ -22,21 +22,21 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.105957, 0.875, 0.574886, 1 )
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.117647, 0.278431, 0.215686, 1 )
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 28
 font_data = ExtResource( 2 )
 
@@ -98,9 +98,9 @@ margin_right = 410.0
 margin_bottom = 215.0
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Lanjut"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
@@ -111,7 +111,7 @@ size_flags_vertical = 3
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/normal = SubResource( 9 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Keluar"
 [connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

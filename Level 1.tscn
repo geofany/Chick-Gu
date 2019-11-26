@@ -5,14 +5,14 @@
 [ext_resource path="res://Assets/Background_hujan.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Kayu AS.png" type="Texture" id=4]
 [ext_resource path="res://ayam1.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Ayam Sakit.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Ayam Mati.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Ayam Senang Idle.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Ayam Senang Gerak.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Ayam Marah Idle.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Ayam Marah Gerak.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Ayam Senang Idle.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Ayam Senang Gerak.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Ayam Mati.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Ayam Marah Idle.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Ayam Marah Gerak.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Ayam Sakit.png" type="Texture" id=13]
 [ext_resource path="res://Assets/belakang.png" type="Texture" id=14]
 [ext_resource path="res://Assets/atas.png" type="Texture" id=15]
 [ext_resource path="res://Assets/tengah.png" type="Texture" id=16]
@@ -228,10 +228,11 @@
 [ext_resource path="res://Assets/Cooldown/Vaksin66.png" type="Texture" id=226]
 [ext_resource path="res://Assets/Cooldown/Vaksin67.png" type="Texture" id=227]
 [ext_resource path="res://Assets/Cooldown/Vaksin68.png" type="Texture" id=228]
-[ext_resource path="res://Assets/fonts/MariaElisasHand.ttf" type="DynamicFontData" id=229]
-[ext_resource path="res://Tutorial.tscn" type="PackedScene" id=230]
-[ext_resource path="res://PauseMenu.tscn" type="PackedScene" id=231]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=232]
+[ext_resource path="res://Tutorial.tscn" type="PackedScene" id=229]
+[ext_resource path="res://PauseMenu.tscn" type="PackedScene" id=230]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=231]
+[ext_resource path="res://GameOver.tscn" type="PackedScene" id=232]
+[ext_resource path="res://Win.tscn" type="PackedScene" id=233]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -276,28 +277,28 @@ bg_color = Color( 0.6, 0.6, 0.6, 0 )
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
+"name": "Senang",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
 "name": "Normal",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "Sakit",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "Mati",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "Senang",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "Marah",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Sakit",
+"speed": 1.0
 } ]
 
 [sub_resource type="SpriteFrames" id=11]
@@ -347,10 +348,6 @@ animations = [ {
 "speed": 13.6
 } ]
 
-[sub_resource type="DynamicFont" id=15]
-size = 48
-font_data = ExtResource( 229 )
-
 [node name="Level 1" type="Control"]
 pause_mode = 1
 anchor_right = 1.0
@@ -372,6 +369,7 @@ texture = ExtResource( 2 )
 normal_map = SubResource( 2 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1280.0
@@ -630,35 +628,19 @@ one_shot = true
 [node name="VaksinTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="GameOver" type="Panel" parent="."]
-pause_mode = 2
-editor/display_folded = true
-visible = false
-margin_left = 200.0
-margin_top = 200.0
-margin_right = 1080.0
-margin_bottom = 520.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GameOver"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="GameOverTitle" type="Label" parent="GameOver/VBoxContainer"]
-margin_right = 880.0
-margin_bottom = 320.0
-size_flags_horizontal = 3
-size_flags_vertical = 7
-custom_fonts/font = SubResource( 15 )
-text = "GameOver"
-align = 1
-valign = 1
-
-[node name="Tutorial" parent="." instance=ExtResource( 230 )]
-
-[node name="PauseMenu" parent="." instance=ExtResource( 231 )]
+[node name="Tutorial" parent="." instance=ExtResource( 229 )]
 visible = false
 
-[node name="HUD" parent="." instance=ExtResource( 232 )]
+[node name="PauseMenu" parent="." instance=ExtResource( 230 )]
+visible = false
+
+[node name="HUD" parent="." instance=ExtResource( 231 )]
+
+[node name="GameOver" parent="." instance=ExtResource( 232 )]
+visible = false
+
+[node name="Win" parent="." instance=ExtResource( 233 )]
+visible = false
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Baris 1/ayam1" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_ayam1_pressed"]
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam1/HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_HPTimer_timeout"]
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam1/SakitTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_SakitTimer_timeout"]
