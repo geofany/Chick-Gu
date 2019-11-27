@@ -1,21 +1,26 @@
 extends Node
 
+signal paused
+
+var level1 = true
+var level2 = false
+var level3 = false
+var level4 = false
+var level5 = false
+var level6 = false
+
 var makanan = false
 var minuman = false
 var vaksin = false
-var makan = 1
-var minum = 1
-var vaks = 1
-var mati = 0
+var makan
+var minum
+var vaks
 var cuaca
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-# Called when the node enters the scene tree for the first time.
+var targetLevel = 1
+var hidup = 0
+var mati = 0
+var time = 60.0
+
 func _ready():
 	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

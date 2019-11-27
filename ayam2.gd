@@ -66,20 +66,20 @@ func _on_ayam1_pressed():
 		if GlobalVar.makanan == true && status != "Sakit":
 			GlobalVar.makan -= 1
 			if GlobalVar.makan == 0:
-				get_node("/root/Level 1/MakananTimer").start(5)
-				get_node("/root/Level 1/Tools/makanan/makan").play("cooldown")
+				get_node("/root/Level 2/MakananTimer").start(5)
+				get_node("/root/Level 2/Tools/makanan/makan").play("cooldown")
 			HP += 20
 		if GlobalVar.minuman == true && status != "Sakit":
 			GlobalVar.minum -= 1
 			if GlobalVar.minum == 0:
-				get_node("/root/Level 1/MinumanTimer").start(5)
-				get_node("/root/Level 1/Tools/Air/air").play("cooldown")
+				get_node("/root/Level 2/MinumanTimer").start(5)
+				get_node("/root/Level 2/Tools/Air/air").play("cooldown")
 			HP += 10
 		if GlobalVar.vaksin == true && status == "Sakit":
 			GlobalVar.vaks -= 1
 			if GlobalVar.vaks == 0:
-				get_node("/root/Level 1/VaksinTimer").start(5)
-				get_node("/root/Level 1/Tools/vaksin/Vaksin").play("cooldown")
+				get_node("/root/Level 2/VaksinTimer").start(5)
+				get_node("/root/Level 2/Tools/vaksin/Vaksin").play("cooldown")
 			status = "Normal"
 			if HP > 50:
 				HP = 50
