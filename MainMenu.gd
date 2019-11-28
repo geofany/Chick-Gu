@@ -8,7 +8,28 @@ func _ready():
 	$HBoxContainer/Background/Ayam01.play("idle")
 	$HBoxContainer/Background/Ayam02.play("idle")
 	$HBoxContainer/Background/Ayam03.play("idle")
+	$LevelPanel/ScrollContainer/VBoxContainer/Level_01.set_disabled(true)
+	$LevelPanel/ScrollContainer/VBoxContainer/Level_02.set_disabled(true)
+	$LevelPanel/ScrollContainer/VBoxContainer/Level_03.set_disabled(true)
+	$LevelPanel/ScrollContainer/VBoxContainer/Level_04.set_disabled(true)
+	$LevelPanel/ScrollContainer/VBoxContainer/Level_05.set_disabled(true)
+	$LevelPanel/ScrollContainer/VBoxContainer/Level_06.set_disabled(true)
 	isLevelPanelHidden = true
+
+func _process(delta):
+	if GlobalVar.level1 == true:
+		$LevelPanel/ScrollContainer/VBoxContainer/Level_01.set_disabled(false)
+	if GlobalVar.level2 == true:
+		$LevelPanel/ScrollContainer/VBoxContainer/Level_02.set_disabled(false)
+	if GlobalVar.level3 == true:
+		$LevelPanel/ScrollContainer/VBoxContainer/Level_03.set_disabled(false)
+	if GlobalVar.level4 == true:
+		$LevelPanel/ScrollContainer/VBoxContainer/Level_04.set_disabled(false)
+	if GlobalVar.level5 == true:
+		$LevelPanel/ScrollContainer/VBoxContainer/Level_05.set_disabled(false)
+	if GlobalVar.level6 == true:
+		$LevelPanel/ScrollContainer/VBoxContainer/Level_06.set_disabled(false)
+	pass
 
 # OptionPanel
 func _on_NewGame_pressed():
@@ -48,7 +69,38 @@ func _on_LevelClose_pressed():
 		$HBoxContainer/OptionPanel/VBoxContainer/Quit.set_disabled(false)
 		isLevelPanelHidden = true
 
-func _on_Level_pressed():
+
+func _on_Level1_pressed():
 	GlobalVar.targetLevel = 1
 	get_tree().change_scene("Level 1.tscn")
+	pass # Replace with function body.
 
+
+func _on_Level2_pressed():
+	GlobalVar.targetLevel = 2
+	get_tree().change_scene("Level 2.tscn")
+	pass # Replace with function body.
+
+
+func _on_Level3_pressed():
+	GlobalVar.targetLevel = 3
+	get_tree().change_scene("Level 3.tscn")
+	pass # Replace with function body.
+
+
+func _on_Level4_pressed():
+	GlobalVar.targetLevel = 4
+	get_tree().change_scene("Level 4.tscn")
+	pass # Replace with function body.
+
+
+func _on_Level5_pressed():
+	GlobalVar.targetLevel = 5
+	get_tree().change_scene("Level 5.tscn")
+	pass # Replace with function body.
+
+
+func _on_Level6_pressed():
+	GlobalVar.targetLevel = 6
+	get_tree().change_scene("Level 6.tscn")
+	pass # Replace with function body.

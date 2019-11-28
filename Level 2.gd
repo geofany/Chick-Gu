@@ -6,7 +6,8 @@ func _ready():
 	GlobalVar.makan = 2
 	GlobalVar.minum = 2
 	GlobalVar.vaks = 2
-	
+	GlobalVar.targetLevel = 2
+	GlobalVar.currentLevel = 2
 	$Win.hide()
 	$GameOver.hide()
 	$PauseMenu.hide()
@@ -23,6 +24,13 @@ func _process(delta):
 	GlobalVar.time -= delta
 	if GlobalVar.time <= 1:
 		get_tree().paused = true
+		GlobalVar.currentLevel = 2
+		GlobalVar.targetLevel += 1
+		GlobalVar.makanan = false
+		GlobalVar.minuman = false
+		GlobalVar.vaksin = false
+		Input.set_custom_mouse_cursor(null)
+		GlobalVar.level3 = true
 		$Win.show()
 	
 	GlobalVar.hidup = get_tree().get_nodes_in_group("chickens").size() - GlobalVar.mati

@@ -9,6 +9,8 @@ var level4 = false
 var level5 = false
 var level6 = false
 
+var currentLevel
+
 var makanan = false
 var minuman = false
 var vaksin = false

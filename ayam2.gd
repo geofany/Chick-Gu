@@ -18,8 +18,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(status)
-	print(mood)
 	if GlobalVar.cuaca == "Panas" && kipas == "Off" || GlobalVar.cuaca == "Panas" && lampu == "On":
 		mood = "Buruk"
 	elif GlobalVar.cuaca == "Hujan" && lampu == "Off" || GlobalVar.cuaca == "Hujan" && kipas == "On":

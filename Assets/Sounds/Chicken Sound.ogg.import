@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Chicken Sound.ogg-cc6e4bae87796593a26eff8163a9367d.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Chicken Sound.ogg"
+dest_files=[ "res://.import/Chicken Sound.ogg-cc6e4bae87796593a26eff8163a9367d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
