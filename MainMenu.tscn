@@ -403,7 +403,6 @@ custom_fonts/font = SubResource( 14 )
 text = "OK"
 
 [node name="CreditsPanel" type="PopupPanel" parent="."]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -426,7 +425,7 @@ Tim PPL Agro H
 Eko 
 Sholehati
 Firman
-Geovani
+Geofany
 Andry"
 align = 1
 valign = 1

@@ -1,18 +1,18 @@
-[gd_scene load_steps=247 format=2]
+[gd_scene load_steps=248 format=2]
 
 [ext_resource path="res://Level 3.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Background_hujan.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Background_vf.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Background_vf.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Background_hujan.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Kayu AS.png" type="Texture" id=4]
 [ext_resource path="res://ayam3.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Ayam Marah Idle.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Ayam Marah Gerak.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Ayam Mati.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Ayam Senang Idle.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Ayam Senang Gerak.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Ayam Sakit.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Ayam Mati.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Ayam Sakit.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Ayam Senang Idle.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Ayam Senang Gerak.png" type="Texture" id=13]
 [ext_resource path="res://Assets/belakang.png" type="Texture" id=14]
 [ext_resource path="res://Assets/atas.png" type="Texture" id=15]
 [ext_resource path="res://Assets/tengah.png" type="Texture" id=16]
@@ -232,17 +232,18 @@
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=230]
 [ext_resource path="res://GameOver.tscn" type="PackedScene" id=231]
 [ext_resource path="res://Win.tscn" type="PackedScene" id=232]
+[ext_resource path="res://Assets/Sounds/Chicken Sound.ogg" type="AudioStream" id=233]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "Hujan",
+"name": "Panas",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "Panas",
+"name": "Hujan",
 "speed": 5.0
 } ]
 
@@ -279,25 +280,25 @@ animations = [ {
 "name": "Marah",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Normal",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "Mati",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "Senang",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 13 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "Sakit",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Normal",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Senang",
+"speed": 3.0
 } ]
 
 [sub_resource type="SpriteFrames" id=11]
@@ -364,10 +365,11 @@ playing = true
 visible = false
 position = Vector2( 639.5, 359 )
 scale = Vector2( 0.652551, 0.718 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 normal_map = SubResource( 2 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1280.0
@@ -855,6 +857,10 @@ visible = false
 
 [node name="Win" parent="." instance=ExtResource( 232 )]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 233 )
+autoplay = true
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Baris 1/ayam1" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_ayam1_pressed"]
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam1/HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_HPTimer_timeout"]
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam1/SakitTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_SakitTimer_timeout"]
@@ -867,14 +873,14 @@ visible = false
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Baris 1/ayam4" to="ScrollContainer/VBoxContainer/Baris 1/ayam4" method="_on_ayam1_pressed"]
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam4/HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam4" method="_on_HPTimer_timeout"]
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam4/SakitTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam4" method="_on_SakitTimer_timeout"]
-[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/Bk1" to="ScrollContainer/VBoxContainer/Baris 1/ayam4" method="_on_Bk1_toggled"]
-[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/Bk1" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_Bk1_toggled"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/Bk1" to="ScrollContainer/VBoxContainer/Baris 1/ayam3" method="_on_Bk1_toggled"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/Bk1" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_Bk1_toggled"]
-[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/BL1" to="ScrollContainer/VBoxContainer/Baris 1/ayam4" method="_on_BL1_toggled"]
-[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/BL1" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_BL1_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/Bk1" to="ScrollContainer/VBoxContainer/Baris 1/ayam4" method="_on_Bk1_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/Bk1" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_Bk1_toggled"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/BL1" to="ScrollContainer/VBoxContainer/Baris 1/ayam3" method="_on_BL1_toggled"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/BL1" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_BL1_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/BL1" to="ScrollContainer/VBoxContainer/Baris 1/ayam4" method="_on_BL1_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/BL1" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_BL1_toggled"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Baris 2/ayam1" to="ScrollContainer/VBoxContainer/Baris 2/ayam1" method="_on_ayam1_pressed"]
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 2/ayam1/HPTimer" to="ScrollContainer/VBoxContainer/Baris 2/ayam1" method="_on_HPTimer_timeout"]
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 2/ayam1/SakitTimer" to="ScrollContainer/VBoxContainer/Baris 2/ayam1" method="_on_SakitTimer_timeout"]
