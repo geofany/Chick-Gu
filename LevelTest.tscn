@@ -1,18 +1,18 @@
-[gd_scene load_steps=249 format=2]
+[gd_scene load_steps=245 format=2]
 
-[ext_resource path="res://Level 1.gd" type="Script" id=1]
+[ext_resource path="res://Gameplay.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Background_vf.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Background_hujan.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Kayu AS.png" type="Texture" id=4]
 [ext_resource path="res://ayam1.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Ayam Marah Idle.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Ayam Marah Gerak.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Ayam Mati.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Ayam Sakit.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Ayam Senang Idle.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Ayam Senang Gerak.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Ayam Senang Idle.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Ayam Senang Gerak.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Ayam Sakit.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Ayam Marah Idle.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Ayam Marah Gerak.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Ayam Mati.png" type="Texture" id=13]
 [ext_resource path="res://Assets/belakang.png" type="Texture" id=14]
 [ext_resource path="res://Assets/atas.png" type="Texture" id=15]
 [ext_resource path="res://Assets/tengah.png" type="Texture" id=16]
@@ -228,12 +228,7 @@
 [ext_resource path="res://Assets/Cooldown/Vaksin66.png" type="Texture" id=226]
 [ext_resource path="res://Assets/Cooldown/Vaksin67.png" type="Texture" id=227]
 [ext_resource path="res://Assets/Cooldown/Vaksin68.png" type="Texture" id=228]
-[ext_resource path="res://Tutorial.tscn" type="PackedScene" id=229]
-[ext_resource path="res://PauseMenu.tscn" type="PackedScene" id=230]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=231]
-[ext_resource path="res://GameOver.tscn" type="PackedScene" id=232]
-[ext_resource path="res://Win.tscn" type="PackedScene" id=233]
-[ext_resource path="res://Assets/Sounds/Chicken Sound.ogg" type="AudioStream" id=234]
+[ext_resource path="res://Assets/fonts/MariaElisasHand.ttf" type="DynamicFontData" id=229]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -278,28 +273,28 @@ bg_color = Color( 0.6, 0.6, 0.6, 0 )
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "Marah",
+"name": "Normal",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "Mati",
-"speed": 1.0
+"name": "Senang",
+"speed": 3.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "Sakit",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
-"name": "Normal",
+"name": "Marah",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 13 ) ],
 "loop": true,
-"name": "Senang",
-"speed": 3.0
+"name": "Mati",
+"speed": 1.0
 } ]
 
 [sub_resource type="SpriteFrames" id=11]
@@ -349,10 +344,11 @@ animations = [ {
 "speed": 13.6
 } ]
 
+[sub_resource type="DynamicFont" id=15]
+size = 48
+font_data = ExtResource( 229 )
+
 [node name="Level 1" type="Control"]
-pause_mode = 1
-anchor_right = 1.0
-anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="Background" type="AnimatedSprite" parent="."]
@@ -370,7 +366,6 @@ texture = ExtResource( 2 )
 normal_map = SubResource( 2 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1280.0
@@ -386,7 +381,6 @@ rect_min_size = Vector2( 1280, 2100 )
 custom_styles/panel = SubResource( 9 )
 
 [node name="Kayu 1" type="Node2D" parent="ScrollContainer/VBoxContainer"]
-editor/display_folded = true
 position = Vector2( 15, -200 )
 __meta__ = {
 "_edit_group_": true
@@ -413,7 +407,6 @@ scale = Vector2( 0.79989, 0.79989 )
 texture = ExtResource( 4 )
 
 [node name="Baris 1" type="Node2D" parent="ScrollContainer/VBoxContainer"]
-editor/display_folded = true
 position = Vector2( 15, 0 )
 __meta__ = {
 "_edit_group_": true
@@ -536,6 +529,7 @@ frames = SubResource( 11 )
 frame = 2
 
 [node name="BL1" type="Button" parent="ScrollContainer/VBoxContainer/Baris 1"]
+editor/display_folded = true
 margin_left = 585.0
 margin_top = 73.0
 margin_right = 630.0
@@ -631,23 +625,116 @@ one_shot = true
 [node name="VaksinTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Tutorial" parent="." instance=ExtResource( 229 )]
+[node name="HUDPanel" type="Panel" parent="."]
+margin_left = 200.0
+margin_right = 1080.0
+margin_bottom = 50.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUDPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="Timer" type="Label" parent="HUDPanel/HBoxContainer"]
+margin_right = 212.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "Timer : "
+align = 1
+valign = 1
+
+[node name="Hidup" type="Label" parent="HUDPanel/HBoxContainer"]
+margin_left = 216.0
+margin_right = 428.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "Hidup : "
+align = 1
+valign = 1
+
+[node name="Mati" type="Label" parent="HUDPanel/HBoxContainer"]
+margin_left = 432.0
+margin_right = 644.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+text = "Mati :"
+align = 1
+valign = 1
+
+[node name="PauseButton" type="Button" parent="HUDPanel/HBoxContainer"]
+margin_left = 648.0
+margin_right = 860.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+text = "Pause"
+
+[node name="GameOver" type="Panel" parent="."]
 visible = false
+margin_left = 200.0
+margin_top = 200.0
+margin_right = 1080.0
+margin_bottom = 520.0
 
-[node name="PauseMenu" parent="." instance=ExtResource( 230 )]
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GameOverTitle" type="Label" parent="GameOver/VBoxContainer"]
+margin_right = 880.0
+margin_bottom = 320.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 15 )
+text = "GameOver"
+align = 1
+valign = 1
+
+[node name="PauseMenu" type="Panel" parent="."]
 visible = false
+margin_left = 200.0
+margin_top = 200.0
+margin_right = 1080.0
+margin_bottom = 520.0
 
-[node name="HUD" parent="." instance=ExtResource( 231 )]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
 
-[node name="GameOver" parent="." instance=ExtResource( 232 )]
-visible = false
+[node name="PauseTitle" type="Label" parent="PauseMenu/VBoxContainer"]
+margin_right = 830.0
+margin_bottom = 87.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 15 )
+text = "Pause"
+align = 1
+valign = 1
 
-[node name="Win" parent="." instance=ExtResource( 233 )]
-visible = false
+[node name="Continue" type="Button" parent="PauseMenu/VBoxContainer"]
+margin_top = 91.0
+margin_right = 830.0
+margin_bottom = 178.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Lanjut"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 234 )
-autoplay = true
+[node name="Exit" type="Button" parent="PauseMenu/VBoxContainer"]
+margin_top = 182.0
+margin_right = 830.0
+margin_bottom = 270.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Keluar"
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Baris 1/ayam1" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_ayam1_pressed"]
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam1/HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_HPTimer_timeout"]
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam1/SakitTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_SakitTimer_timeout"]
@@ -655,9 +742,7 @@ autoplay = true
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam2/HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_HPTimer_timeout"]
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam2/SakitTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_SakitTimer_timeout"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/Bk1" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_Bk1_toggled"]
-[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/Bk1" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_Bk1_toggled"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/BL1" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_BL1_toggled"]
-[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/BL1" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_BL1_toggled"]
 [connection signal="pressed" from="Tools/makanan" to="Tools" method="_on_makanan_pressed"]
 [connection signal="pressed" from="Tools/Air" to="Tools" method="_on_air_pressed"]
 [connection signal="pressed" from="Tools/vaksin" to="Tools" method="_on_vaksin_pressed"]
@@ -665,3 +750,5 @@ autoplay = true
 [connection signal="timeout" from="MakananTimer" to="." method="_on_MakananTimer_timeout"]
 [connection signal="timeout" from="MinumanTimer" to="." method="_on_MinumanTimer_timeout"]
 [connection signal="timeout" from="VaksinTimer" to="." method="_on_VaksinTimer_timeout"]
+[connection signal="pressed" from="PauseMenu/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="PauseMenu/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

@@ -1,15 +1,18 @@
 extends Panel
 
 func _ready():
-	#hide()
-	pass
+	GlobalVar.save_game()
 
 func _process(delta):
-	$AnimatedSprite.play("gerak")
+	if GlobalVar.currentLevel == 6:
+		$VBoxContainer/NextLevel.hide()
+	else:
+		$VBoxContainer/NextLevel.show()
 
 func _on_NextLevel_pressed():
-	# get_tree().change_scene("Level 2.tscn")
-	pass
+	var nextLvl = GlobalVar.currentLevel  + 1
+	var next = "Level %d.tscn" % nextLvl
+	get_tree().change_scene(next)
 
 func _on_Exit_pressed():
 	get_tree().change_scene("MainMenu.tscn")

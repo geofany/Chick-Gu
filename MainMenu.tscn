@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/wood_texture_2.jpg" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/Ayam Normal Idle.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Ayam Normal Gerak.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Kayu AS.png" type="Texture" id=7]
+[ext_resource path="res://Assets/fonts/corbel.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/fonts/corbelb.ttf" type="DynamicFontData" id=9]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
@@ -135,6 +137,14 @@ font_data = ExtResource( 3 )
 size = 24
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=15]
+size = 18
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 20
+font_data = ExtResource( 9 )
+
 [node name="MainMenu" type="Node"]
 pause_mode = 2
 script = ExtResource( 1 )
@@ -169,21 +179,21 @@ text = "Chick-Gu"
 align = 1
 valign = 1
 
-[node name="NewGame" type="Button" parent="HBoxContainer/OptionPanel/VBoxContainer"]
+[node name="Play" type="Button" parent="HBoxContainer/OptionPanel/VBoxContainer"]
 margin_top = 225.0
 margin_right = 342.0
 margin_bottom = 335.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 3 )
-text = "New Game"
+text = "Play Game"
 
-[node name="LoadGame" type="Button" parent="HBoxContainer/OptionPanel/VBoxContainer"]
+[node name="Reset" type="Button" parent="HBoxContainer/OptionPanel/VBoxContainer"]
 margin_top = 339.0
 margin_right = 342.0
 margin_bottom = 449.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 3 )
-text = "Load Game"
+text = "Reset Level"
 
 [node name="Credits" type="Button" parent="HBoxContainer/OptionPanel/VBoxContainer"]
 margin_top = 453.0
@@ -402,8 +412,68 @@ size_flags_horizontal = 3
 custom_fonts/font = SubResource( 14 )
 text = "OK"
 
+[node name="ResetPanel" type="PopupPanel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -100.0
+margin_right = 200.0
+margin_bottom = 100.0
+
+[node name="Container" type="Container" parent="ResetPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResetPanel/Container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+
+[node name="Title" type="Label" parent="ResetPanel/Container/VBoxContainer"]
+margin_right = 350.0
+margin_bottom = 28.0
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 15 )
+text = "Bahaya!"
+align = 1
+valign = 1
+
+[node name="Text" type="RichTextLabel" parent="ResetPanel/Container/VBoxContainer"]
+margin_top = 32.0
+margin_right = 350.0
+margin_bottom = 88.0
+size_flags_vertical = 7
+size_flags_stretch_ratio = 2.0
+text = "Apakah Anda yakin akan menghapus file save lama dan memulai dari awal?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResetPanel/Container/VBoxContainer"]
+margin_top = 92.0
+margin_right = 350.0
+margin_bottom = 150.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Reset_Cancel" type="Button" parent="ResetPanel/Container/VBoxContainer/HBoxContainer"]
+margin_right = 173.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 16 )
+text = "Batal"
+
+[node name="Reset_OK" type="Button" parent="ResetPanel/Container/VBoxContainer/HBoxContainer"]
+margin_left = 177.0
+margin_right = 350.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 16 )
+text = "OK"
+
 [node name="CreditsPanel" type="PopupPanel" parent="."]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -426,20 +496,22 @@ Tim PPL Agro H
 Eko 
 Sholehati
 Firman
-Geovani
+Geofany
 Andry"
 align = 1
 valign = 1
-[connection signal="pressed" from="HBoxContainer/OptionPanel/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
-[connection signal="pressed" from="HBoxContainer/OptionPanel/VBoxContainer/LoadGame" to="." method="_on_LoadGame_pressed"]
+[connection signal="pressed" from="HBoxContainer/OptionPanel/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="HBoxContainer/OptionPanel/VBoxContainer/Reset" to="." method="_on_Reset_pressed"]
 [connection signal="pressed" from="HBoxContainer/OptionPanel/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="HBoxContainer/OptionPanel/VBoxContainer/Quit" to="." method="_on_Exit_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_01" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_02" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_03" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_04" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_05" to="." method="_on_Level_pressed"]
-[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_06" to="." method="_on_Level_pressed"]
+[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_01" to="." method="_on_Level1_pressed"]
+[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_02" to="." method="_on_Level2_pressed"]
+[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_03" to="." method="_on_Level3_pressed"]
+[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_04" to="." method="_on_Level4_pressed"]
+[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_05" to="." method="_on_Level5_pressed"]
+[connection signal="pressed" from="LevelPanel/ScrollContainer/VBoxContainer/Level_06" to="." method="_on_Level6_pressed"]
 [connection signal="pressed" from="LevelPanel/LevelClose" to="." method="_on_LevelClose_pressed"]
 [connection signal="pressed" from="PlayerPanel/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_Cancel_pressed"]
 [connection signal="pressed" from="PlayerPanel/VBoxContainer/HBoxContainer/OK" to="." method="_on_OK_pressed"]
+[connection signal="pressed" from="ResetPanel/Container/VBoxContainer/HBoxContainer/Reset_Cancel" to="." method="_on_Reset_Cancel_pressed"]
+[connection signal="pressed" from="ResetPanel/Container/VBoxContainer/HBoxContainer/Reset_OK" to="." method="_on_Reset_OK_pressed"]

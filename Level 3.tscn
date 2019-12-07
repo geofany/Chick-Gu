@@ -1,10 +1,10 @@
-[gd_scene load_steps=249 format=2]
+[gd_scene load_steps=248 format=2]
 
-[ext_resource path="res://Level 1.gd" type="Script" id=1]
+[ext_resource path="res://Level 3.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Background_vf.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Background_hujan.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Kayu AS.png" type="Texture" id=4]
-[ext_resource path="res://ayam1.gd" type="Script" id=5]
+[ext_resource path="res://ayam3.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Ayam Marah Idle.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Ayam Marah Gerak.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Ayam Mati.png" type="Texture" id=8]
@@ -228,12 +228,11 @@
 [ext_resource path="res://Assets/Cooldown/Vaksin66.png" type="Texture" id=226]
 [ext_resource path="res://Assets/Cooldown/Vaksin67.png" type="Texture" id=227]
 [ext_resource path="res://Assets/Cooldown/Vaksin68.png" type="Texture" id=228]
-[ext_resource path="res://Tutorial.tscn" type="PackedScene" id=229]
-[ext_resource path="res://PauseMenu.tscn" type="PackedScene" id=230]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=231]
-[ext_resource path="res://GameOver.tscn" type="PackedScene" id=232]
-[ext_resource path="res://Win.tscn" type="PackedScene" id=233]
-[ext_resource path="res://Assets/Sounds/Chicken Sound.ogg" type="AudioStream" id=234]
+[ext_resource path="res://PauseMenu.tscn" type="PackedScene" id=229]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=230]
+[ext_resource path="res://GameOver.tscn" type="PackedScene" id=231]
+[ext_resource path="res://Win.tscn" type="PackedScene" id=232]
+[ext_resource path="res://Assets/Sounds/Chicken Sound.ogg" type="AudioStream" id=233]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -349,7 +348,7 @@ animations = [ {
 "speed": 13.6
 } ]
 
-[node name="Level 1" type="Control"]
+[node name="Level 3" type="Control"]
 pause_mode = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -481,9 +480,9 @@ autostart = true
 "chickens",
 ]]
 editor/display_folded = true
-margin_left = 435.0
+margin_left = 425.0
 margin_top = 80.0
-margin_right = 535.0
+margin_right = 525.0
 margin_bottom = 240.0
 focus_mode = 0
 enabled_focus_mode = 0
@@ -512,6 +511,82 @@ texture_progress = ExtResource( 16 )
 autostart = true
 
 [node name="SakitTimer" type="Timer" parent="ScrollContainer/VBoxContainer/Baris 1/ayam2"]
+wait_time = 15.0
+autostart = true
+
+[node name="ayam3" type="Button" parent="ScrollContainer/VBoxContainer/Baris 1" groups=[
+"chickens",
+]]
+editor/display_folded = true
+margin_left = 675.0
+margin_top = 80.0
+margin_right = 775.0
+margin_bottom = 240.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="Ayam1" type="AnimatedSprite" parent="ScrollContainer/VBoxContainer/Baris 1/ayam3"]
+position = Vector2( 50, 80 )
+scale = Vector2( 0.200786, 0.200786 )
+frames = SubResource( 10 )
+animation = "Normal"
+
+[node name="HPBar" type="TextureProgress" parent="ScrollContainer/VBoxContainer/Baris 1/ayam3"]
+margin_left = 207.0
+margin_top = -173.0
+margin_right = 418.0
+margin_bottom = -125.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( -418, 298 )
+value = 70.0
+texture_under = ExtResource( 14 )
+texture_over = ExtResource( 15 )
+texture_progress = ExtResource( 16 )
+
+[node name="HPTimer" type="Timer" parent="ScrollContainer/VBoxContainer/Baris 1/ayam3"]
+autostart = true
+
+[node name="SakitTimer" type="Timer" parent="ScrollContainer/VBoxContainer/Baris 1/ayam3"]
+wait_time = 15.0
+autostart = true
+
+[node name="ayam4" type="Button" parent="ScrollContainer/VBoxContainer/Baris 1" groups=[
+"chickens",
+]]
+editor/display_folded = true
+margin_left = 925.0
+margin_top = 80.0
+margin_right = 1025.0
+margin_bottom = 240.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="Ayam1" type="AnimatedSprite" parent="ScrollContainer/VBoxContainer/Baris 1/ayam4"]
+position = Vector2( 50, 80 )
+scale = Vector2( 0.200786, 0.200786 )
+frames = SubResource( 10 )
+animation = "Normal"
+
+[node name="HPBar" type="TextureProgress" parent="ScrollContainer/VBoxContainer/Baris 1/ayam4"]
+margin_left = 207.0
+margin_top = -173.0
+margin_right = 418.0
+margin_bottom = -125.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( -418, 298 )
+value = 70.0
+texture_under = ExtResource( 14 )
+texture_over = ExtResource( 15 )
+texture_progress = ExtResource( 16 )
+
+[node name="HPTimer" type="Timer" parent="ScrollContainer/VBoxContainer/Baris 1/ayam4"]
+autostart = true
+
+[node name="SakitTimer" type="Timer" parent="ScrollContainer/VBoxContainer/Baris 1/ayam4"]
 wait_time = 15.0
 autostart = true
 
@@ -549,6 +624,147 @@ __meta__ = {
 }
 
 [node name="L1" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 1/BL1"]
+position = Vector2( 21.3478, 62.9874 )
+scale = Vector2( 0.487998, 0.487998 )
+texture = ExtResource( 20 )
+hframes = 2
+
+[node name="Baris 2" type="Node2D" parent="ScrollContainer/VBoxContainer"]
+position = Vector2( 15, 200 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Kayu 1" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 2"]
+position = Vector2( 290, 300 )
+scale = Vector2( 0.79989, 0.79989 )
+texture = ExtResource( 4 )
+
+[node name="Kayu 2" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 2"]
+position = Vector2( 540, 300 )
+scale = Vector2( 0.79989, 0.79989 )
+texture = ExtResource( 4 )
+
+[node name="Kayu 3" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 2"]
+position = Vector2( 790, 300 )
+scale = Vector2( 0.79989, 0.79989 )
+texture = ExtResource( 4 )
+
+[node name="Kayu 4" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 2"]
+position = Vector2( 1040, 300 )
+scale = Vector2( 0.79989, 0.79989 )
+texture = ExtResource( 4 )
+
+[node name="ayam1" type="Button" parent="ScrollContainer/VBoxContainer/Baris 2" groups=[
+"chickens",
+]]
+editor/display_folded = true
+margin_left = 185.0
+margin_top = 80.0
+margin_right = 285.0
+margin_bottom = 240.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="Ayam1" type="AnimatedSprite" parent="ScrollContainer/VBoxContainer/Baris 2/ayam1"]
+position = Vector2( 50, 80 )
+scale = Vector2( 0.200786, 0.200786 )
+frames = SubResource( 10 )
+animation = "Normal"
+
+[node name="HPBar" type="TextureProgress" parent="ScrollContainer/VBoxContainer/Baris 2/ayam1"]
+margin_left = 207.0
+margin_top = -173.0
+margin_right = 418.0
+margin_bottom = -125.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( -418, 298 )
+value = 70.0
+texture_under = ExtResource( 14 )
+texture_over = ExtResource( 15 )
+texture_progress = ExtResource( 16 )
+
+[node name="HPTimer" type="Timer" parent="ScrollContainer/VBoxContainer/Baris 2/ayam1"]
+autostart = true
+
+[node name="SakitTimer" type="Timer" parent="ScrollContainer/VBoxContainer/Baris 2/ayam1"]
+wait_time = 15.0
+autostart = true
+
+[node name="ayam2" type="Button" parent="ScrollContainer/VBoxContainer/Baris 2" groups=[
+"chickens",
+]]
+editor/display_folded = true
+margin_left = 425.0
+margin_top = 80.0
+margin_right = 525.0
+margin_bottom = 240.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 5 )
+
+[node name="Ayam1" type="AnimatedSprite" parent="ScrollContainer/VBoxContainer/Baris 2/ayam2"]
+position = Vector2( 50, 80 )
+scale = Vector2( 0.200786, 0.200786 )
+frames = SubResource( 10 )
+animation = "Normal"
+
+[node name="HPBar" type="TextureProgress" parent="ScrollContainer/VBoxContainer/Baris 2/ayam2"]
+margin_left = 207.0
+margin_top = -173.0
+margin_right = 418.0
+margin_bottom = -125.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( -418, 298 )
+value = 70.0
+texture_under = ExtResource( 14 )
+texture_over = ExtResource( 15 )
+texture_progress = ExtResource( 16 )
+
+[node name="HPTimer" type="Timer" parent="ScrollContainer/VBoxContainer/Baris 2/ayam2"]
+autostart = true
+
+[node name="SakitTimer" type="Timer" parent="ScrollContainer/VBoxContainer/Baris 2/ayam2"]
+wait_time = 15.0
+autostart = true
+
+[node name="Bk1" type="Button" parent="ScrollContainer/VBoxContainer/Baris 2"]
+editor/display_folded = true
+margin_left = -10.0
+margin_top = 75.0
+margin_right = 84.0
+margin_bottom = 222.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="k1" type="AnimatedSprite" parent="ScrollContainer/VBoxContainer/Baris 2/Bk1"]
+position = Vector2( 50, 80 )
+scale = Vector2( 0.138432, 0.138432 )
+frames = SubResource( 11 )
+frame = 2
+
+[node name="BL1" type="Button" parent="ScrollContainer/VBoxContainer/Baris 2"]
+margin_left = 585.0
+margin_top = 73.0
+margin_right = 630.0
+margin_bottom = 127.0
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="L1" type="Sprite" parent="ScrollContainer/VBoxContainer/Baris 2/BL1"]
 position = Vector2( 21.3478, 62.9874 )
 scale = Vector2( 0.487998, 0.487998 )
 texture = ExtResource( 20 )
@@ -631,22 +847,19 @@ one_shot = true
 [node name="VaksinTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Tutorial" parent="." instance=ExtResource( 229 )]
+[node name="PauseMenu" parent="." instance=ExtResource( 229 )]
 visible = false
 
-[node name="PauseMenu" parent="." instance=ExtResource( 230 )]
+[node name="HUD" parent="." instance=ExtResource( 230 )]
+
+[node name="GameOver" parent="." instance=ExtResource( 231 )]
 visible = false
 
-[node name="HUD" parent="." instance=ExtResource( 231 )]
-
-[node name="GameOver" parent="." instance=ExtResource( 232 )]
-visible = false
-
-[node name="Win" parent="." instance=ExtResource( 233 )]
+[node name="Win" parent="." instance=ExtResource( 232 )]
 visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 234 )
+stream = ExtResource( 233 )
 autoplay = true
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Baris 1/ayam1" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_ayam1_pressed"]
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam1/HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_HPTimer_timeout"]
@@ -654,10 +867,30 @@ autoplay = true
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Baris 1/ayam2" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_ayam1_pressed"]
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam2/HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_HPTimer_timeout"]
 [connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam2/SakitTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_SakitTimer_timeout"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Baris 1/ayam3" to="ScrollContainer/VBoxContainer/Baris 1/ayam3" method="_on_ayam1_pressed"]
+[connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam3/HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam3" method="_on_HPTimer_timeout"]
+[connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam3/SakitTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam3" method="_on_SakitTimer_timeout"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Baris 1/ayam4" to="ScrollContainer/VBoxContainer/Baris 1/ayam4" method="_on_ayam1_pressed"]
+[connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam4/HPTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam4" method="_on_HPTimer_timeout"]
+[connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 1/ayam4/SakitTimer" to="ScrollContainer/VBoxContainer/Baris 1/ayam4" method="_on_SakitTimer_timeout"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/Bk1" to="ScrollContainer/VBoxContainer/Baris 1/ayam3" method="_on_Bk1_toggled"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/Bk1" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_Bk1_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/Bk1" to="ScrollContainer/VBoxContainer/Baris 1/ayam4" method="_on_Bk1_toggled"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/Bk1" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_Bk1_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/BL1" to="ScrollContainer/VBoxContainer/Baris 1/ayam3" method="_on_BL1_toggled"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/BL1" to="ScrollContainer/VBoxContainer/Baris 1/ayam1" method="_on_BL1_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/BL1" to="ScrollContainer/VBoxContainer/Baris 1/ayam4" method="_on_BL1_toggled"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 1/BL1" to="ScrollContainer/VBoxContainer/Baris 1/ayam2" method="_on_BL1_toggled"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Baris 2/ayam1" to="ScrollContainer/VBoxContainer/Baris 2/ayam1" method="_on_ayam1_pressed"]
+[connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 2/ayam1/HPTimer" to="ScrollContainer/VBoxContainer/Baris 2/ayam1" method="_on_HPTimer_timeout"]
+[connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 2/ayam1/SakitTimer" to="ScrollContainer/VBoxContainer/Baris 2/ayam1" method="_on_SakitTimer_timeout"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Baris 2/ayam2" to="ScrollContainer/VBoxContainer/Baris 2/ayam2" method="_on_ayam1_pressed"]
+[connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 2/ayam2/HPTimer" to="ScrollContainer/VBoxContainer/Baris 2/ayam2" method="_on_HPTimer_timeout"]
+[connection signal="timeout" from="ScrollContainer/VBoxContainer/Baris 2/ayam2/SakitTimer" to="ScrollContainer/VBoxContainer/Baris 2/ayam2" method="_on_SakitTimer_timeout"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 2/Bk1" to="ScrollContainer/VBoxContainer/Baris 2/ayam1" method="_on_Bk1_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 2/Bk1" to="ScrollContainer/VBoxContainer/Baris 2/ayam2" method="_on_Bk1_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 2/BL1" to="ScrollContainer/VBoxContainer/Baris 2/ayam1" method="_on_BL1_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Baris 2/BL1" to="ScrollContainer/VBoxContainer/Baris 2/ayam2" method="_on_BL1_toggled"]
 [connection signal="pressed" from="Tools/makanan" to="Tools" method="_on_makanan_pressed"]
 [connection signal="pressed" from="Tools/Air" to="Tools" method="_on_air_pressed"]
 [connection signal="pressed" from="Tools/vaksin" to="Tools" method="_on_vaksin_pressed"]
